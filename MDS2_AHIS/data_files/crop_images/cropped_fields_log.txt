@@ -1,0 +1,17 @@
+FirstName: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\FirstName.jpg
+LastName: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\LastName.jpg
+BirthDate: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\BirthDate.jpg
+Gender: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Gender.jpg
+Nationality: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Nationality.jpg
+IC_Passport: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\IC_Passport.jpg
+MaritalStatus: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\MaritalStatus.jpg
+PhoneNo: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\PhoneNo.jpg
+Email: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Email.jpg
+Address: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Address.jpg
+City: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\City.jpg
+State: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\State.jpg
+ZipCode: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\ZipCode.jpg
+EC_FirstName: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\EC_FirstName.jpg
+EC_LastName: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\EC_LastName.jpg
+Relationship: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Relationship.jpg
+EC_ContactNo: C:\Users\Alicia\OneDrive - Monash University\Desktop\FIT3164\Project\automated-health-information-system\MDS2_AHIS\data_files\crop_images\EC_ContactNo.jpg

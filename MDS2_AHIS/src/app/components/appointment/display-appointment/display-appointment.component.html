@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.05);">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center" style="color: #007bff;">{{ appointment_id }} Details</h1>
+                <hr> 
+                <div class="row" style="font-size: 16px;">
+                    <p><strong>Object ID:</strong> {{ objectId }}</p>
+                    <p><strong>Appointment ID:</strong> {{ appointment_id }}</p>
+                    <p><strong>Physician-in-Charge:</strong> {{ physician_id }} - {{ physician_name | toUpperCase }}</p>
+                    <p><strong>Patient:</strong> {{ patient_id }} - {{ patient_name | toUpperCase }}</p>
+                    <p><strong>Venue:</strong> {{ appointment_venue | toUpperCase }}</p>
+                    <p><strong>Appointment Start Time:</strong> {{ appointment_time | dateFormat }}</p>
+                    <p><strong>Duration of Appointment:</strong> {{ appointment_duration }} minutes</p>
+                    <!-- Button styling -->
+                    <button routerLink="/start-consultation/{{appointment_id}}" 
+                            style="
+                                padding: 10px;
+                                border: none;
+                                background-color: #007bff;
+                                color: white;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                font-size: 16px;">
+                        Start Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

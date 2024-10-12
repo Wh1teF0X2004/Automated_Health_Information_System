@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Select one of the Physician</h1>
+            <div class="form-group">
+                <label for="name">Selected Physician ID:</label>
+                <h3>{{physician_id}}</h3>
+                <label for="name">Newly Assigned Department:</label>
+                <input type="text" class="form-control" name="id" [(ngModel)]="newDepartment" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" (click)="updateButton()">Update</button>
+        </div>
+    </div>
+</div>    
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Select</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let doc of physicianDB">
+                                <th scope="row">{{ doc.physician_id }}</th>
+                                <td>{{ doc.physician_firstName | toUpperCase }}</td>
+                                <td>{{ doc.physician_lastName | toUpperCase }}</td>
+                                <td>{{ doc.department | toUpperCase }}</td>
+                                <td><button class="btn btn-primary" (click)="selectPhysicianButton(doc.physician_id)">Select</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

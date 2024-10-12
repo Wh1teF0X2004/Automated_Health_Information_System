@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="container" style="width: 1000px; margin-bottom: 2rem">
+        <div class="card">
+            <div class="container" style="width: 95%;">
+                <h3 align="center">&nbsp;</h3>
+                <h1 align="center"> Medical Diagnosis</h1>
+                <div class="row">
+                    <h3 align="center">&nbsp;</h3>
+                    <div class="col-md-6"> 
+                        <div class="container" style="width: 95%;">
+                        <h4>Physician in charge</h4>
+                        <hr>
+                        <p><strong>Physician ID:</strong> {{ aPhysician.physician_id }}</p>
+                        <p><strong>Physician Name:</strong> Dr. {{ aPhysician.physician_firstName }} {{ aPhysician.physician_lastName }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="container" style="width: 95%;">
+                        <h4>Patient Information</h4>
+                        <hr>
+                        <p><strong>Patient ID:</strong> {{ aPatient.patientId }}</p>
+                        <p><strong>Patient Name:</strong> {{ aPatient.firstName }} {{ aPatient.lastName }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main>
+                <div class="container" style="width: 95%;">
+                    <hr>
+                    <h4>Diagnosis</h4>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Treatment Description:</label>
+                        <textarea class="form-control" name="diagnosisDescription" rows="3" placeholder="Enter Treatment Description" [(ngModel)]="diagnosis.diagnosisDescription"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Additional Note:</label>
+                        <textarea class="form-control" name="diagnosisAdditional" rows="3" placeholder="Enter Additional Notes or NA" [(ngModel)]="diagnosis.diagnosisAdditional"></textarea>
+                    </div>
+                    <hr>
+                    <button (click)="addDiagnosis()" class="btn btn-primary">Submit</button>
+                    <p></p>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center" style="color: #007bff;">{{ prescription_id }} Details</h1>
+                <strong><hr></strong>
+                <div class="row">
+                    <p><strong>Object ID:</strong> {{ objectId }}</p>
+                    <p><strong>Prescription ID:</strong> {{ prescription_id }}</p>
+                    <p><strong>Prescription Name:</strong> {{ prescription_name | toUpperCase }}</p>
+                    <hr> 
+                    <p><strong>Physician ID (Issued By):</strong> {{ physician_id | toUpperCase }}</p>
+                    <hr> 
+                    <p><strong>Patient ID:</strong> {{ patient_id }}</p>
+                    <p><strong>Patient Full Name:</strong> {{ patient_name | toUpperCase }}</p>
+                    <hr> 
+                    <p><strong>Medication ID:</strong> {{ medication_id }}</p>
+                    <p><strong>Medication Name:</strong> {{ medicine_name | toUpperCase }}</p>
+                    <hr> 
+                    <p><strong>Start consume on:</strong> {{ prescription_startdate | dateFormat }}</p>
+                    <p><strong>Finish consume before:</strong> {{ prescription_enddate | dateFormat }}</p>
+                    <p><strong>Consumption Frequency:</strong> {{ prescription_freqency }}</p>
+                    <p><strong>Consumption Dosage:</strong> {{ prescription_dosage }}</p>
+                    <p><strong>Special Instruction:</strong> {{ prescription_specialinstructions }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

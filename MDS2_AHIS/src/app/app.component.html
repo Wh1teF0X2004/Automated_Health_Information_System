@@ -1,0 +1,43 @@
+<header *ngIf="showMenu" class="d-flex flex-column justify-content-start align-items-center position-relative" style="height: 12rem;">
+    <!-- Navigation Bar (at the top) -->
+    <nav class="navbar navbar-expand-lg w-100" style="background-color: #18599B;">
+        <div class="container-fluid d-flex justify-content-between">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <button class="openbtn nav-link" style="color: white; background: none; border: none;" (click)="openNav()">&#9776; Menu</button>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" routerLink="/home" style="color: white;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-physician" style="color: white;">Physician</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-patients" style="color: white;">Patient</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-medication" style="color: white;">Medication</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-prescription" style="color: white;">Prescription</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-diagnosis" style="color: white;">Diagnosis</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/list-appointment" style="color: white;">Appointment</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu button and Banner (below the navigation bar) -->
+    <div class="d-flex justify-content-center align-items-center w-100 mt-2 position-relative" style="height: 8rem;">
+        <a routerLink="/home"><img src="{{imageUrl}}" class="img-fluid" alt="Banner" style="max-height: 8rem;"></a>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <a class="nav-link" routerLink="/home">Home</a>
+        <a class="nav-link" routerLink="/list-physician">Physician</a>
+        <a class="nav-link" routerLink="/list-patients">Patient</a>
+        <a class="nav-link" routerLink="/list-medication">Medication</a>
+        <a class="nav-link" routerLink="/list-prescription">Prescription</a>
+        <a class="nav-link" routerLink="/list-appointment">Appointment</a>
+        <a class="nav-link" routerLink="/list-diagnosis">Diagnosis</a>
+        <a class="nav-link" routerLink="/">Log Out</a>
+    </div>
+</header>
+
+<router-outlet></router-outlet>

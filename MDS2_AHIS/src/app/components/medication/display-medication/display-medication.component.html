@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center" style="color: #007bff;">{{ medication_id }} Details</h1>
+                <hr> 
+                <div class="row">
+                    <p><strong>Object ID:</strong> {{ objectId }}</p>
+                    <p><strong>Medication ID:</strong> {{ medication_id }}</p>
+                    <p><strong>Medication Name:</strong> {{ medicine_name | toUpperCase }}</p>
+                    <p><strong>Route of Admission:</strong> {{ medication_routeofadmission | toUpperCase }}</p>
+                    <p><strong>Concentration:</strong> {{ medication_concentration }}</p>
+                    <p><strong>Volume:</strong> {{ medication_volume }}</p>
+                    <!-- <div class="col-md-6">
+                        <p><strong>Object ID:</strong> {{ objectId }}</p>
+                        <p><strong>Medication ID:</strong> {{ medication_id }}</p>
+                        <p><strong>Medication Name:</strong> {{ medicine_name | toUpperCase }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Route of Admission:</strong> {{ medication_routeofadmission | toUpperCase }}</p>
+                        <p><strong>Concentration:</strong> {{ medication_concentration }}</p>
+                        <p><strong>Volume:</strong> {{ medication_volume }}</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

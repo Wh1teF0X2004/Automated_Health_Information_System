@@ -1,0 +1,17 @@
+FirstName: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\FirstName.jpg
+LastName: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\LastName.jpg
+BirthDate: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\BirthDate.jpg
+Gender: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\Gender.jpg
+Nationality: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\Nationality.jpg
+IC_Passport: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\IC_Passport.jpg
+MaritalStatus: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\MaritalStatus.jpg
+PhoneNo: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\PhoneNo.jpg
+Email: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\Email.jpg
+Address: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\Address.jpg
+City: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\City.jpg
+State: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\State.jpg
+ZipCode: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\ZipCode.jpg
+EC_FirstName: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\EC_FirstName.jpg
+EC_LastName: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\EC_LastName.jpg
+Relationship: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\Relationship.jpg
+EC_ContactNo: C:\Monash\MDS2\automated-health-information-system\MDS2_AHIS\data_files\crop_images\Form_UpperCase2\EC_ContactNo.jpg

@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="container" style="width: 1000px; margin-bottom: 2rem">
+        <div class="card">
+        <div class="container" style="width: 95%;">
+            <h3 align="center">&nbsp;</h3>
+            <h1 align="center">Update Medical Consultation</h1>
+                <div class="row">
+                    <h3 align="center">&nbsp;</h3>
+                    <div class="col-md-6"> 
+                        <div class="container" style="width: 95%;">
+                        <h4>Physician in charge</h4>
+                        <hr>
+                        <p><strong>Physician ID:</strong> {{ aPhysician.physician_id }}</p>
+                        <p><strong>Physician Name:</strong> Dr. {{ aPhysician.physician_firstName }} {{ aPhysician.physician_lastName }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6"> 
+                        <div class="container" style="width: 95%;">
+                        <h4>Patient Information</h4>
+                        <hr>
+                        <p><strong>Patient ID:</strong> {{ aPatient.patientId }}</p>
+                        <p><strong>Patient Name:</strong> {{ aPatient.firstName }} {{ aPatient.lastName }}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <main>
+            <div class="container" style="width: 95%;">
+            <hr>
+            <h4>General Physical Examination</h4>
+            <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="height" class="form-label">Height:</label>
+                        <input type="text" class="form-control" name="patientHeight" placeholder="{{ aConsultation.height }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="weight" class="form-label">Weight:</label>
+                        <input type="text" class="form-control" name="patientWeight" placeholder="{{ aConsultation.weight }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="generalAppearance" class="form-label">General Appearance:</label>
+                        <input type="text" class="form-control" name="patientGeneralAppearance" placeholder="{{ aConsultation.generalAppearance }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="bodyTemperature" class="form-label">Body Temperature:</label>
+                        <input type="text" class="form-control" name="bodyTemperature" placeholder="{{ aConsultation.temperature }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="bloodPressure" class="form-label">Blood Pressure:</label>
+                        <input type="text" class="form-control" name="patientBloodPressure" placeholder="{{ aConsultation.bloodPressure }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="breathingPattern" class="form-label">Breathing Pattern</label>
+                        <input type="text" class="form-control" name="patientBreathingPattern" placeholder="{{ aConsultation.breathingPattern }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="pupilReflexCondition" class="form-label">Pupil Reflex Condition:</label>
+                        <input type="text" class="form-control" name="patientPupilReflexCondition" placeholder="{{ aConsultation.pupilReflexCondition }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="nerveReflexCondition" class="form-label">Nerve Reflex Condition:</label>
+                        <input type="text" class="form-control" name="patientNerveReflexCondition" placeholder="{{ aConsultation.nerveReflexCondition }}" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Other:</label>
+                <textarea class="form-control" name="patientOther" rows="3" [(ngModel)]="consultation.other"></textarea>
+            </div>
+            <p align="center">&nbsp;</p>          
+            <h4>Patient Symptoms</h4>
+            <div class="mb-3">
+                <label for="Symptoms" class="form-label">Symptoms:</label>
+                <textarea class="form-control" name="patientSymptom" rows="3" [(ngModel)]="consultation.patientSymptom"></textarea>
+            </div>
+            <hr>
+            <button (click)="sendUpdateConsultation()" class="btn btn-primary">Submit</button>
+            <p></p>
+        </div>
+        </main>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

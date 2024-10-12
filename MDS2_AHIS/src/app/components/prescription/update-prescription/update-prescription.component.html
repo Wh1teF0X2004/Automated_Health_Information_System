@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Select one of the Prescriptions</h1>
+            <div class="form-group">
+                <label for="name">Selected Prescription ID:</label>
+                <h3>{{prescription_id}}</h3>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">Issued By:</label>
+                        <select class="form-control" name="id" [(ngModel)]="newPhysicianID" required>
+                          <option *ngFor="let doctor of physicianDB" [value]="doctor.physician_id">
+                            {{ doctor.name }}
+                          </option>
+                        </select>
+                    </div>
+                    <p> </p>
+                    <label for="name">New Prescription Dosage:</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="newPrescription_dosage" required>
+                    <p> </p>
+                    <label for="name">New Medication Consumption Frequency:</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="newPrescription_freqency" required>
+                    <p> </p>
+                    <label for="name">New Prescription Special Instructions:</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="newPrescription_specialinstructions" required>
+                    <p> </p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" (click)="updateButton()">Update</button>
+        </div>
+    </div>
+</div>    
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Prescription Name</th>
+                                <th scope="col">Physician-in-charge</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pre of prescriptionDB">
+                                <th scope="row">{{ pre.prescription_id }}</th>
+                                <td>{{ pre.prescription_name | toUpperCase }}</td>
+                                <td>{{ pre.physician_id | toUpperCase }}</td>
+                                <td><button class="btn btn-primary" (click)="selectPrescriptionButton(pre.prescription_id)" style="background-color: cadetblue;">Update</button></td>
+                                <td><a routerLink="/display-prescription/{{pre.prescription_id}}" class="btn btn-primary">Display</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

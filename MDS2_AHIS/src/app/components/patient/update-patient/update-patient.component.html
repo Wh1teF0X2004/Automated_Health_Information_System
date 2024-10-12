@@ -1,0 +1,133 @@
+<main class="row justify-content-center">
+    <div class="card" style="width: 1000px; margin-bottom: 2rem">
+        <div class="container" style="width: 95%;">
+        <h3 align="center">&nbsp;</h3>
+        <h1 align="center">Update Details for Patient ID: {{ aPatient.patientId }}</h1>
+        <p align="center">&nbsp;</p>
+        <h4>Personal Details</h4>
+        <div class="row">
+            <label for="name" class="form-label">Name</label>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="patientFirstName" placeholder="{{ aPatient.firstName}}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="patientLastName" placeholder="{{ aPatient.lastName }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="birthDate" class="form-label">Date of Birth</label>
+                        <input type="text" class="form-control" name="patientDob" placeholder="{{ aPatient.birthDate | dateFormat }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="gender" class="form-label">Gender </label>
+                        <input type="text" class="form-control" name="patientGender" placeholder="{{ aPatient.gender }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Nationality</label>
+                        <input type="text" class="form-control" name="patientNationality" placeholder="{{ aPatient.nationality }}" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Identification Number (IC)</label>
+                        <input type="text" class="form-control" name="patientID" placeholder="{{ aPatient.identificationNum }}" disabled>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div class="mb-3">
+                    <label for="floatingSelect">Marital Status</label>
+                    <input type="text" class="form-control" name="patientMaritalStatus" [(ngModel)]="patient.maritalStatus">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">Contact Number</label>
+                    <input type="text" class="form-control" name="patientTel" [(ngModel)]="patient.tel">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">E-mail</label>
+                    <input type="text" class="form-control" name="patientEmail" [(ngModel)]="patient.email">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Address</label>
+            <input type="text" class="form-control" name="patientStreetAddress"  [(ngModel)]="patient.streetAddress">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">City</label>
+                    <input type="text" class="form-control" name="patientCity"  [(ngModel)]="patient.city">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">State</label>
+                    <input type="text" class="form-control" name="patientState"  [(ngModel)]="patient.state">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Postal / Zip Code</label>
+            <input type="text" class="form-control" name="patientAge"  [(ngModel)]="patient.postalCode">
+        </div>
+
+        <h4>Emergency Contact</h4>
+        <div class="row">
+            <div class="col-md-6 mb-4 pb-2">
+                <label for="name" class="form-label">First Name</label>
+                <div data-mdb-input-init class="form-outline">
+                    <input type="text" class="form-control" name="emergencyFirstName"  [(ngModel)]="patient.emgcyFName">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <label for="name" class="form-label">Last Name</label>
+                <div data-mdb-input-init class="form-outline">
+                    <input type="text" class="form-control" name="emergencyLastName" [(ngModel)]="patient.emgcyLName">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">Relation</label>
+                    <input type="text" class="form-control" name="emergencyRelationship" [(ngModel)]="patient.emgcyRelationship">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 pb-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label for="name" class="form-label">Contact Number</label>
+                    <input type="text" class="form-control" name="emergencyTel" [(ngModel)]="patient.emgcyTel">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <button (click)="sendUpdatePatient()" class="btn btn-primary">Submit</button>
+        <p></p>
+    </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

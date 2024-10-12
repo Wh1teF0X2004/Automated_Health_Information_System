@@ -1,0 +1,43 @@
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Prescription Records</h1>
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Prescription Name</th>
+                                <th scope="col">Patient Name</th>
+                                <th scope="col">Physician-in-charge</th>
+                                <th scope="col"> </th>
+                                <th scope="col">Actions</th>
+                                <th scope="col"> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pre of prescriptionDB">
+                                <th scope="row">{{ pre.prescription_id }}</th>
+                                <td>{{ pre.prescription_name | toUpperCase }}</td>
+                                <td>{{ patientNames[pre.patient_id] | toUpperCase }}</td>
+                                <td>{{ pre.physician_id | toUpperCase }}</td>
+                                <td><a routerLink="/display-prescription/{{pre.prescription_id}}" class="btn btn-primary">Display</a></td>
+                                <td><a routerLink="/update-prescription/{{pre.prescription_id}}" class="btn btn-secondary">Update</a></td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="onDelete(pre.prescription_id)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

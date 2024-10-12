@@ -1,0 +1,28 @@
+.extract {
+    color: rgb(121, 17, 17);
+    font-size: 14px;
+    display: block;
+}
+
+.complete {
+    color: rgb(255, 136, 0);
+    font-size: 14px;
+    display: block;
+}
+
+.upload {
+    color: rgb(131, 131, 131);
+    font-size: 14px;
+    display: block;
+}
+
+.required {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}

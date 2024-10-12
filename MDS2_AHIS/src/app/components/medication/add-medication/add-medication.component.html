@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 52rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center">Add/Register Medication</h1>
+                <h5 class="sub-header text-center">Fill in new medication details & click submit</h5>
+                <p> </p>
+                <form id="medicationForm" (ngSubmit)="onSubmit(medicationForm)" class="needs-validation" novalidate action="/add-medication" #medicationForm="ngForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" name="medicine_name" placeholder="Enter medication name" ngModel required>
+                        <div class="invalid-feedback">
+                            Please provide a valid name.
+                        </div>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="medication_routeofadmission">Route Of Admission:</label>
+                        <textarea class="form-control" name="medication_routeofadmission" placeholder="Enter medication route of admission" ngModel></textarea>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="medication_concentration">Medication Concentration:</label>
+                        <input type="number" class="form-control" name="medication_concentration" placeholder="Enter medication concentration" ngModel required>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="medication_volume">Medication Volume:</label>
+                        <input type="number" class="form-control" name="medication_volume" placeholder="Enter medication volume" ngModel required>
+                    </div>
+                    <p> </p>
+                    <button type="submit" class="btn btn-primary mt-4" >Add Medication</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

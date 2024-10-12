@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem;">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center" style="color: #007bff;">{{ physician_id }} Details</h1>
+                <hr> 
+                <div class="row">
+                    <p><strong>Object ID:</strong> {{ objectId }}</p>
+                    <p><strong>Physician/Doctor ID:</strong> {{ physician_id }}</p>
+                    <p><strong>First Name:</strong> {{ physician_firstName | toUpperCase }}</p>
+                    <p><strong>Last Name:</strong> {{ physician_lastName | toUpperCase }}</p>
+                    <p><strong>Birth Date:</strong> {{ birth_date | dateFormat }}</p>
+                    <p><strong>Department:</strong> {{ department | toUpperCase }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="register.component.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>REGISTER</h2>
+            <form [formGroup]="registerForm" action="login.component.html" method="post">
+                <div class="input-group">
+                    <label for="role">Assigned Role</label>
+                    <input formControlName="role" type="text" id="role" name="role" required placeholder="Enter Admin/User">
+                    <span *ngIf="registerForm.hasError('required', 'role') && registerForm.controls['role'].dirty" class="required">*Role is required</span>
+                </div>
+                <div class="input-group">
+                    <label for="firstname">First Name</label>
+                    <input formControlName="userFirstName" type="text" id="firstname" name="firstname" required placeholder="Enter First Name">
+                    <span *ngIf="registerForm.hasError('required', 'userFirstName') && registerForm.controls['userFirstName'].dirty" class="required">*First name is required</span>
+                </div>
+                <div class="input-group">
+                    <label for="lastname">Last Name</label>
+                    <input formControlName="userLastName" type="text" id="lastname" name="lastname" required placeholder="Enter Last Name">
+                    <span *ngIf="registerForm.hasError('required', 'userLastName') && registerForm.controls['userLastName'].dirty" class="required">*Last name is required</span>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input formControlName="userEmail" type="email" id="email" name="email" required placeholder="Enter Email">
+                    <span *ngIf="registerForm.hasError('required', 'userEmail') && registerForm.controls['userEmail'].dirty" class="required">*Email is required</span>
+                    <span *ngIf="registerForm.hasError('email', 'userEmail')" class="required">*Email is Invalid</span>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input formControlName="username" type="username" id="username" name="username" required placeholder="Enter Username">
+                    <span *ngIf="registerForm.hasError('required', 'username') && registerForm.controls['username'].dirty" class="required">*Username is required</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input formControlName="password" type="password" id="password" name="password" required placeholder="Enter Password">
+                    <span *ngIf="registerForm.hasError('required', 'password') && registerForm.controls['password'].dirty" class="required">*Password is required</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Comfirm Password</label>
+                    <input formControlName="comfirmPassword" type="password" id="comfirmPassword" name="comfirmPassword" required placeholder="Comfirm password">
+                    <span *ngIf="registerForm.hasError('required', 'comfirmPassword') && registerForm.controls['comfirmPassword'].dirty" class="required">*Comfirm Password is required</span>
+                    <span *ngIf="registerForm.hasError('comfirmPasswordValidator', 'comfirmPassword')" class="required">*Password doesn't matched!</span>
+                </div>
+                <button [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" (click)="register()" class="register-btn">Register</button>
+            </form>
+
+            <!-- <div class="login-link">
+                <p style="color: white;">Already have an account? <a routerLink="/login" style="color: #e35b20;">Login here</a></p>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

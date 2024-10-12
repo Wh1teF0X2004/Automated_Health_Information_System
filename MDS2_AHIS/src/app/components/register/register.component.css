@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: url('https://img.freepik.com/free-photo/medicine-blue-background-flat-lay_23-2149341573.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.register-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.required {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #e35b20;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #d44a18;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.login-link a {
+    color: white;
+    text-decoration: underline;
+}
+
+.login-link a:hover {
+    text-decoration: none;
+}
+
+.disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}

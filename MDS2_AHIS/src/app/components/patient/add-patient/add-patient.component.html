@@ -1,0 +1,332 @@
+<div class="row justify-content-center">
+    <div class="card" style="width: 1000px; margin-bottom: 2rem">
+        <div class="container" style="width: 95%;">
+        <h3 align="center">&nbsp;</h3>
+        <h1 align="center">Patient Registration Form</h1>
+        <p align="center">Fill in the Patient details and Click Submit to register a new patient.</p>
+        <p align="center">&nbsp;</p>
+        <main>
+            <!-- <form [formGroup]="patientForm">
+                <div class="row">
+                    <label for="name" class="form-label">Name</label>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <input formControlName="firstName" type="text" class="form-control" name="patientFirstName" placeholder="Enter first name" [(ngModel)]="patient.firstName">
+                            <span *ngIf="patientForm.hasError('required', 'firstName') && patientForm.controls['firstName'].dirty" class="required">*First name is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <input formControlName="lastName" type="text" class="form-control" name="patientLastName" placeholder="Enter last name" [(ngModel)]="patient.lastName">
+                            <span *ngIf="patientForm.hasError('required', 'lastName') && patientForm.controls['lastName'].dirty" class="required">*Last name is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="birthDate" class="form-label">Date of Birth</label>
+                            <input formControlName="birthDate" type="date" class="form-control" name="patientDob" [(ngModel)]="patient.birthDate">
+                            <span *ngIf="patientForm.hasError('required', 'birthDate') && patientForm.controls['birthDate'].dirty" class="required">*Birth Date is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div *ngIf="extracted">
+                            <label for="floatingSelect">Gender</label>
+                            <input formControlName="gender" type="text" class="form-control" name="patientGender" [(ngModel)]="patient.gender">
+                            <span *ngIf="patientForm.hasError('required', 'gender') && patientForm.controls['gender'].dirty" class="required">*Gender is required</span>
+                        </div>
+                        <div *ngIf="isDisabled" data-mdb-input-init class="form-outline">
+                            <label for="gender" class="form-label">Gender </label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input formControlName="gender" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Female" [(ngModel)]="patient.gender">
+                                    <label class="form-check-label" for="inlineRadio1">Female</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input formControlName="gender" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Male" [(ngModel)]="patient.gender">
+                                    <label class="form-check-label" for="inlineRadio2">Male</label>
+                                </div>
+                            </div>
+                            <span *ngIf="patientForm.hasError('required', 'gender') && patientForm.controls['gender'].dirty" class="required">*Gender is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">Nationality</label>
+                            <input formControlName="nationality" type="text" class="form-control" name="patientNationality" placeholder="Enter nationality" [(ngModel)]="patient.nationality">
+                            <span *ngIf="patientForm.hasError('required', 'nationality') && patientForm.controls['nationality'].dirty" class="required">*Nationality is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">Identification Number (IC)</label>
+                            <input formControlName="identificationNum" type="text" class="form-control" name="patientID" placeholder="Enter Identification Number " [(ngModel)]="patient.identificationNum">
+                            <span *ngIf="patientForm.hasError('required', 'identificationNum') && patientForm.controls['identificationNum'].dirty" class="required">*Identification Number is required</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingSelect">Marital Status</label>
+                        <select *ngIf="isDisabled" class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="patient.maritalStatus">
+                          <option selected>Please Select</option>
+                          <option value="Single">Single</option>
+                          <option value="Married">Married</option>
+                          <option value="Divorced">Divorced</option>
+                          <option value="Widowed">Widowed</option>
+                        </select>
+                        <input *ngIf="extracted" type="text" class="form-control" name="patientMS" [(ngModel)]="patient.maritalStatus">
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">Contact Number</label>
+                            <input formControlName="tel" type="text" class="form-control" name="patientTel" placeholder="Example: 0123456789" [(ngModel)]="patient.tel">
+                            <span *ngIf="patientForm.hasError('required', 'tel') && patientForm.controls['tel'].dirty" class="required">*Contact Number is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">E-mail</label>
+                            <input formControlName="email" type="text" class="form-control" name="patientEmail" placeholder="myname@example.com" [(ngModel)]="patient.email">
+                            <span *ngIf="patientForm.hasError('required', 'email') && patientForm.controls['email'].dirty" class="required">*Email is required</span>
+                            <span *ngIf="patientForm.hasError('email', 'email')" class="required">*Email is Invalid</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Address:</label>
+                        <input formControlName="streetAddress" type="text" class="form-control" name="patientStreetAddress" placeholder="Enter Street Address" [(ngModel)]="patient.streetAddress">
+                        <span *ngIf="patientForm.hasError('required', 'streetAddress') && patientForm.controls['streetAddress'].dirty" class="required">*Street Address is required</span>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">City</label>
+                            <input formControlName="city" type="text" class="form-control" name="patientCity" placeholder="Enter City" [(ngModel)]="patient.city">
+                            <span *ngIf="patientForm.hasError('required', 'city') && patientForm.controls['city'].dirty" class="required">*City is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">State</label>
+                            <input formControlName="state" type="text" class="form-control" name="patientState" placeholder="Enter State " [(ngModel)]="patient.state">
+                            <span *ngIf="patientForm.hasError('required', 'state') && patientForm.controls['state'].dirty" class="required">*State is required</span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Postal / Zip Code</label>
+                        <input formControlName="postalCode" type="text" class="form-control" name="patientAge" placeholder="Enter postal/zip code" [(ngModel)]="patient.postalCode">
+                        <span *ngIf="patientForm.hasError('required', 'postalCode') && patientForm.controls['postalCode'].dirty" class="required">*Postal Code is required</span>
+                    </div>
+                </div>  
+                <p align="center">&nbsp;</p>          
+                <h4>Emergency Contact</h4>
+                <div class="row">
+                    <label for="name" class="form-label">Name</label>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <input formControlName="emgcyFName" type="text" class="form-control" name="emergencyFirstName" placeholder="Enter first name" [(ngModel)]="patient.emgcyFName">
+                            <span *ngIf="patientForm.hasError('required', 'emgcyFName') && patientForm.controls['emgcyFName'].dirty" class="required">*Emergency First Name is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <input formControlName="emgcyLName" type="text" class="form-control" name="emergencyLastName" placeholder="Enter last name" [(ngModel)]="patient.emgcyLName">
+                            <span *ngIf="patientForm.hasError('required', 'emgcyLName') && patientForm.controls['emgcyLName'].dirty" class="required">*Emergency Last Name is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">Relation</label>
+                            <input formControlName="emgcyRelationship" type="text" class="form-control" name="emergencyRelationship" placeholder="Enter Relationship" [(ngModel)]="patient.emgcyRelationship">
+                            <span *ngIf="patientForm.hasError('required', 'emgcyRelationship') && patientForm.controls['emgcyRelationship'].dirty" class="required">*Emergency Relationship is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 pb-2">
+                        <div data-mdb-input-init class="form-outline">
+                            <label for="name" class="form-label">Contact Number</label>
+                            <input formControlName="emgcyTel" type="text" class="form-control" name="emergencyTel" placeholder="Example: 0123456789" [(ngModel)]="patient.emgcyTel">
+                            <span *ngIf="patientForm.hasError('required', 'emgcyTel') && patientForm.controls['emgcyTel'].dirty" class="required">*Emergency Comtact Number is required</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label"><strong>Upload Form Image for Automated Extraction</strong></label>
+                        <span *ngIf="extracted" class="extract"><strong>*IMPORTANT: Extraction Is Not 100% Accurate. Proceed with Caution and Edit accordingly.</strong></span>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+                            <button *ngIf="uploadStatus" (click)="onUpload()" class="btn btn-primary" >Upload</button>
+                            <button *ngIf="isConverted" (click)="extract()" class="btn btn-success">Extract</button>
+                        </div>
+                        <div>
+                            <div>
+                                <span *ngIf="isConverted" class="complete">Image Upload successfully.</span>
+                                <span *ngIf="uploading" class="upload">Uploading...</span>
+                                <span *ngIf="extracting" class="upload">Extracting...</span>
+                                <span *ngIf="extracted" class="complete">Extraction Complete.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <span *ngIf="extracted" class="extract"><strong>*NOTE: Double Check Input Details before Click Submit.</strong></span>
+                <button (click)="addPatient()" class="btn btn-primary">Submit</button>
+                <p></p>
+            </form> -->
+            <div class="row">
+                <label for="name" class="form-label">Name</label>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="patientFirstName" placeholder="Enter first name" [(ngModel)]="patient.firstName">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="patientLastName" placeholder="Enter last name" [(ngModel)]="patient.lastName">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="birthDate" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" name="patientDob" [(ngModel)]="patient.birthDate">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div *ngIf="extracted">
+                        <label for="floatingSelect">Gender</label>
+                        <input type="text" class="form-control" name="patientGender" [(ngModel)]="patient.gender">
+                    </div>
+                    <div *ngIf="isDisabled" data-mdb-input-init class="form-outline">
+                        <label for="gender" class="form-label">Gender </label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Female" [(ngModel)]="patient.gender">
+                                <label class="form-check-label" for="inlineRadio1">Female</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Male" [(ngModel)]="patient.gender">
+                                <label class="form-check-label" for="inlineRadio2">Male</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Nationality</label>
+                        <input type="text" class="form-control" name="patientNationality" placeholder="Enter nationality" [(ngModel)]="patient.nationality">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Identification Number (IC)</label>
+                        <input type="text" class="form-control" name="patientID" placeholder="Enter Identification Number " [(ngModel)]="patient.identificationNum">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="floatingSelect">Marital Status</label>
+                    <select *ngIf="isDisabled" class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="patient.maritalStatus">
+                      <option selected>Please Select</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                      <option value="Divorced">Divorced</option>
+                      <option value="Widowed">Widowed</option>
+                    </select>
+                    <input *ngIf="extracted" type="text" class="form-control" name="patientMS" [(ngModel)]="patient.maritalStatus">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Contact Number</label>
+                        <input type="text" class="form-control" name="patientTel" placeholder="Example: 0123456789" [(ngModel)]="patient.tel">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" name="patientEmail" placeholder="myname@example.com" [(ngModel)]="patient.email">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Address:</label>
+                    <input type="text" class="form-control" name="patientStreetAddress" placeholder="Enter Street Address" [(ngModel)]="patient.streetAddress">
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">City</label>
+                        <input type="text" class="form-control" name="patientCity" placeholder="Enter City" [(ngModel)]="patient.city">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">State</label>
+                        <input type="text" class="form-control" name="patientState" placeholder="Enter State " [(ngModel)]="patient.state">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Postal / Zip Code</label>
+                    <input type="text" class="form-control" name="patientAge" placeholder="Enter postal/zip code" [(ngModel)]="patient.postalCode">
+                </div>
+            </div>  
+            <p align="center">&nbsp;</p>          
+            <h4>Emergency Contact</h4>
+            <div class="row">
+                <label for="name" class="form-label">Name</label>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="emergencyFirstName" placeholder="Enter first name" [(ngModel)]="patient.emgcyFName">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" class="form-control" name="emergencyLastName" placeholder="Enter last name" [(ngModel)]="patient.emgcyLName">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Relation</label>
+                        <input type="text" class="form-control" name="emergencyRelationship" placeholder="Enter Relationship" [(ngModel)]="patient.emgcyRelationship">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                        <label for="name" class="form-label">Contact Number</label>
+                        <input type="text" class="form-control" name="emergencyTel" placeholder="Example: 0123456789" [(ngModel)]="patient.emgcyTel">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label"><strong>Upload Form Image for Automated Extraction</strong></label>
+                    <span *ngIf="extracted" class="extract"><strong>*IMPORTANT: Extraction Is Not 100% Accurate. Proceed with Caution and Edit accordingly.</strong></span>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+                        <button *ngIf="uploadStatus" (click)="onUpload()" class="btn btn-primary" >Upload</button>
+                        <button *ngIf="isConverted" (click)="extract()" class="btn btn-success">Extract</button>
+                    </div>
+                    <div>
+                        <div>
+                            <span *ngIf="isConverted" class="complete">Image Upload successfully.</span>
+                            <span *ngIf="uploading" class="upload">Uploading...</span>
+                            <span *ngIf="extracting" class="upload">Extracting...</span>
+                            <span *ngIf="extracted" class="complete">Extraction Complete.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <span *ngIf="extracted" class="extract"><strong>*NOTE: Double Check Input Details before Click Submit.</strong></span>
+            <button (click)="addPatient()" class="btn btn-primary">Submit</button>
+            <p></p>
+        </main>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

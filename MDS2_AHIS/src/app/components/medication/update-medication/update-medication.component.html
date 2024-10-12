@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Select one of the Medication</h1>
+            <div class="form-group">
+                <label for="name">Selected Medication ID:</label>
+                <h3>{{medication_id}}</h3>
+                <label for="name">New Route of Admission:</label>
+                <input type="text" class="form-control" name="id" [(ngModel)]="newMedicationRouteOfAdmission" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" (click)="updateButton()">Update</button>
+        </div>
+    </div>
+</div>    
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Route of Admission</th>
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Volume</th>
+                                <th scope="col">Select</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let med of medicationDB">
+                                <th scope="row">{{ med.medication_id }}</th>
+                                <td>{{ med.medicine_name }}</td>
+                                <td>{{ med.medication_routeofadmission }}</td>
+                                <td>{{ med.medication_concentration }}</td>
+                                <td>{{ med.medication_volume }}</td>
+                                <td><button class="btn btn-primary" (click)="selectMedicationButton(med.medication_id)">Select</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

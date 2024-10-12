@@ -1,0 +1,46 @@
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Medication Records</h1>
+            <!-- <button (click)="onClick()">Load Medication</button> -->
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Route of Admission</th>
+                                <th scope="col">Concentration</th>
+                                <th scope="col">Volume</th>
+                                <th scope="col"> </th>
+                                <th scope="col">Actions</th>
+                                <th scope="col"> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let med of medicationDB">
+                                <th scope="row">{{ med.medication_id }}</th>
+                                <td>{{ med.medicine_name | toUpperCase }}</td>
+                                <td>{{ med.medication_routeofadmission | toUpperCase }}</td>
+                                <td>{{ med.medication_concentration}}</td>
+                                <td>{{ med.medication_volume}}</td>
+                                <td><a routerLink="/display-medication/{{med.medication_id}}" class="btn btn-primary">View</a></td>
+                                <td><a routerLink="/update-medication/{{med.medication_id}}" class="btn btn-secondary">Update</a></td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="onDelete(med.medication_id)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

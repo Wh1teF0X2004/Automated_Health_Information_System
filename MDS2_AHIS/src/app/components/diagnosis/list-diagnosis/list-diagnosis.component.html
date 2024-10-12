@@ -1,0 +1,44 @@
+<div class="album py-5">
+    <div class="container" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card" >
+        <h1 class="my-2" align="center">Diagnosis Records</h1> 
+        <div class="row row-cols-1 g-3">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th><strong>ID</strong></th>
+                        <th><strong>Diagnosis Date</strong></th>
+                        <th><strong>Treatment Description</strong></th>
+                        <th><strong>Physician ID </strong></th>
+                        <th><strong>Patient ID</strong></th>
+                        <th><strong>View</strong></th>
+                        <th><strong>Edit</strong></th>
+                        <th><strong>Delete</strong></th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr *ngFor="let diagnosis of diagnosisDB">
+                                <td><strong>{{diagnosis.diagnosisId}}</strong></td>
+                                <td>{{diagnosis.diagnosisDate | dateFormat}}</td>
+                                <td>{{diagnosis.diagnosisDescription }}</td>
+                                <td>{{diagnosis.physicianId}}</td>
+                                <td>{{diagnosis.patientId}}</td>
+                                <td><button (click)="viewSelectedDiagnosis(diagnosis.diagnosisId)" type="button" class="btn btn-primary" >Details</button></td>
+                                <td><button (click)="updateDiagnosis(diagnosis.diagnosisId)" type="button" class="btn btn-secondary" >Update</button></td>
+                                <td><button (click)="sendDiagnosisId(diagnosis.diagnosisId)" type="button" class="btn btn-danger" >Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

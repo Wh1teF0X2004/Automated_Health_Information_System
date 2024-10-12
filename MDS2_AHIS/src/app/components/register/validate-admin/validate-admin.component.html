@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Admin  Page</title>
+    <link rel="stylesheet" href="validate-admin.component.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Admin Authentication</h2>
+            <form [formGroup]="validateForm" >
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input formControlName="userEmail" type="email" id="email" name="email" required placeholder="Enter Email">
+                    <span *ngIf="validateForm.hasError('required', 'userEmail') && validateForm.controls['userEmail'].dirty" class="required">*Email is required</span>
+                    <span *ngIf="validateForm.hasError('email', 'userEmail')" class="required">*Email is Invalid</span>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input formControlName="password" type="password" id="password" name="password" required placeholder="Enter Password">
+                    <span *ngIf="validateForm.hasError('required', 'password') && validateForm.controls['password'].dirty" class="required">*Password is required</span>
+                </div>
+                <button [disabled]="validateForm.invalid" [class.disabled]="validateForm.invalid" (click)="authenticationAdmin()" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

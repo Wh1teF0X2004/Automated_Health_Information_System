@@ -1,0 +1,96 @@
+<main class="d-flex justify-content-center mt-4 flex-column align-items-center">
+    <!-- First Section with Two Cards (Physician and Patient Information) -->
+    <section class="d-flex justify-content-between mb-5" style="gap: 2rem;"> <!-- Adds 2rem spacing between cards -->
+        <!-- Physician Information Card -->
+        <div class="card" style="width: 25rem;">
+            <div class="card-body">
+                <div class="container" style="width: 100%;">
+                    <!-- Physician Information -->
+                    <h4>Physician in charge</h4>
+                    <hr>
+                    <p><strong>Physician ID:</strong> {{ targetPhysician.physician_id }}</p>
+                    <p><strong>Physician Name:</strong> Dr. {{ targetPhysician.physician_firstName }} {{ targetPhysician.physician_lastName }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Information Card -->
+        <div class="card" style="width: 25rem;">
+            <div class="card-body">
+                <div class="container" style="width: 100%;">
+                    <!-- Patient Information -->
+                    <h4>Patient Information</h4>
+                    <hr>
+                    <p><strong>Patient ID:</strong> {{ targetPatient.patientId }}</p>
+                    <p><strong>Patient Name:</strong> {{ targetPatient.firstName }} {{ targetPatient.lastName }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section for Prescription Form -->
+    <section class="mb-5"> <!-- Adds 2rem margin below -->
+        <div class="card" style="width: 52rem;">
+            <div class="card-body">
+                <div class="container" style="width: 90%;">
+                    <h1 class="card-title text-center">Issue Prescription</h1>
+                    <h5 class="sub-header text-center">Fill in the prescription information for the patient</h5>
+                    <p> </p>
+
+                    <form id="prescriptionForm" (ngSubmit)="onSubmit(prescriptionForm)" class="needs-validation" novalidate action="/add-prescription" #prescriptionForm="ngForm">
+                        <div class="form-group">
+                            <label for="name">Prescription Name:</label>
+                            <input type="text" class="form-control" name="prescription_name" placeholder="Enter prescription name" ngModel required>
+                            <div class="invalid-feedback">
+                                Please provide a valid name.
+                            </div>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="medication_id">Medication:</label>
+                            <select class="form-control" name="medication_id" placeholder="Select Medication" ngModel required>
+                              <option *ngFor="let med of medicationDB" [value]="med.medication_id">
+                                {{ med.name }}
+                              </option>
+                            </select>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="prescription_dosage">Medication Dosage:</label>
+                            <input type="number" class="form-control" name="prescription_dosage" placeholder="Enter medication dosage" ngModel required>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="prescription_freqency">Consumption Frequency:</label>
+                            <input type="number" class="form-control" name="prescription_freqency" placeholder="Enter medication consumption frequency" ngModel required>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="prescription_startdate">Issued Date:</label>
+                            <input type="date" class="form-control" name="prescription_startdate" ngModel required>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="prescription_enddate">Consume Before:</label>
+                            <input type="date" class="form-control" name="prescription_enddate" ngModel required>
+                        </div>
+                        <p> </p>
+                        <div class="form-group">
+                            <label for="prescription_specialinstructions">Special Instructions:</label>
+                            <textarea class="form-control" name="prescription_specialinstructions" placeholder="Enter any potential special instructions" ngModel></textarea>
+                        </div>
+                        <p> </p>
+                        <button type="submit" class="btn btn-primary mt-4">Issue Prescription</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

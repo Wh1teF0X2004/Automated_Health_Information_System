@@ -1,0 +1,45 @@
+<div class="album py-5">
+    <div class="container" style="width: 95%; margin-bottom: 2rem">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="my-2">Patient Record List</h3> 
+            <button (click)="addPatient()" type="button" class="btn btn-primary">Add</button>
+        </div>
+        <div class="card" >
+        <div class="row row-cols-1 g-3">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th><strong>ID</strong></th>
+                        <th><strong>First Name</strong></th>
+                        <th><strong>Last Name</strong></th>
+                        <th><strong>Contact No</strong></th>
+                        <th><strong>View</strong></th>
+                        <th><strong>Edit</strong></th>
+                        <th><strong>Delete</strong></th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr *ngFor="let patient of patientDB">
+                                <td><strong>{{patient.patientId}}</strong></td>
+                                <td>{{patient.firstName | toUpperCase}}</td>
+                                <td>{{patient.lastName | toUpperCase}}</td>
+                                <td>{{patient.tel}}</td>
+                                <td><button (click)="viewPatient(patient.patientId)" type="button" class="btn btn-primary" >Details</button></td>
+                                <td><button (click)="updatePatient(patient.patientId)" type="button" class="btn btn-secondary" >Update</button></td>
+                                <td><button (click)="sendPatientId(patient.patientId)" type="button" class="btn btn-danger" >Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

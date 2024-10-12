@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details</title>
+    <style>
+        h1 {
+            margin-bottom: 2rem;
+        }
+        section {
+            margin-top: 1rem;
+        }
+        .row {
+            display: flex;
+        }
+        .card {
+            margin-bottom: 1rem;
+        }
+        .equal-height {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .col-md-7 {
+            width: 58.33%; 
+        }
+        .col-md-5 {
+            width: 41.67%;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="container" style="width: 95%;">
+    <h1 class="text-center">Patient Details</h1>
+    <!-- Basically, I've created the custom width sizing for Personal Details and Appointment History in CSS above :) -->
+    <!-- Personal Details and Appointment History -->
+    <section class="container mb-4">
+        <div class="row">
+            <!-- Personal Details -->
+            <div class="col-md-7"> 
+                <div class="card equal-height mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title"><strong> Patient Details </strong></h4>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <p><strong>Patient ID:</strong> {{ aPatient.patientId }}</p>
+                                <p><strong>Patient Name :</strong> {{ aPatient.firstName }} {{ aPatient.lastName }}</p>
+                                <p><strong>DOB :</strong> {{ aPatient.birthDate | dateFormat }}</p>
+                                <p><strong>Age :</strong> {{ aPatient.birthDate | calculateAge }}</p>
+                                <p><strong>Gender :</strong> {{ aPatient.gender }}</p>
+                                <p><strong>Marital Status:</strong> {{ aPatient.maritalStatus }}</p>
+                                <p><strong>Nationality:</strong> {{ aPatient.nationality }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>NRIC No:</strong> {{ aPatient.identificationNum }}</p>
+                                <p><strong>Home Address:</strong> {{ aPatient.streetAddress }}, {{ aPatient.postalCode }} {{ aPatient.city }}, {{ aPatient.state }}</p>
+                                <p><strong>Email Address:</strong> {{ aPatient.email }}</p>
+                                <p><strong>Tel/Mobile No:</strong> {{ aPatient.tel }}</p>
+                                <p><strong>Admission Date:</strong> {{ aPatient.admitDate | dateFormat }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4 class="card-title"><strong> Emergency Contact Details </strong></h4>
+                        <p><strong>Name:</strong> {{ aPatient.emgcyFName }} {{ aPatient.emgcyLName }}</p>
+                        <p><strong>Relation:</strong> {{ aPatient.emgcyRelationship }}</p>
+                        <p><strong>Tel/Mobile No:</strong> {{ aPatient.emgcyTel }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment History -->
+            <div class="col-md-5"> 
+                <div class="card equal-height mb-3">
+                    <div class="card-body">
+                        <h4 class="card-title"><strong> Appointment History </strong></h4>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Appointment ID</th>
+                                    <th>Appointment Date Time</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let appointment of aPatient.appointmentList">
+                                    <td>{{appointment.appointment_id}}</td>
+                                    <td>{{appointment.appointment_time | dateTimeFormat }}</td>
+                                    <td><button (click)="viewSelectedAppointment(appointment.appointment_id)" type="button" class="btn btn-primary">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnosis History -->
+    <section class="container mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><strong> Diagnosis History </strong></h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Diagnosis ID</th>
+                            <th>Physician ID</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let diagnosis of aPatient.diagnosisList">
+                            <td>{{diagnosis.diagnosisId}}</td>
+                            <td>{{diagnosis.physicianId}}</td>
+                            <td>{{diagnosis.diagnosisDescription}}</td>
+                            <td>{{diagnosis.diagnosisDate | dateFormat}}</td>
+                            <td><button (click)="viewSelectedDiagnosis(diagnosis.diagnosisId)" type="button" class="btn btn-primary">View</button></td>
+                            <td><button (click)="sendDiagnosisId(diagnosis.diagnosisId)" type="button" class="btn btn-danger" >Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    </div>
+</main>
+
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by: <a class="text-white">MDS02</a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Select one of the Appointment</h1>
+            <div class="form-group">
+                <label for="name">Selected Appointment ID:</label>
+                <h3>{{appointment_id}}</h3>
+                <div class="card-body">
+                    <label for="name">New Appointment Venue:</label>
+                    <input type="text" class="form-control" name="id" [(ngModel)]="newAppointment_venue" required>
+                    <p> </p>
+                    <label for="name">New Appointment Time:</label>
+                    <input type="datetime-local" class="form-control" name="id" [(ngModel)]="newAppointment_time" required>
+                    <p> </p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3" (click)="updateButton()">Update</button>
+        </div>
+    </div>
+</div>    
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Patient ID</th>
+                                <th scope="col">Physician ID</th>
+                                <th scope="col">Appointment Time</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let app of appointmentDB">
+                                <th scope="row">{{ app.appointment_id }}</th>
+                                <td>{{ app.patient_id | toUpperCase }}</td>
+                                <td>{{ app.physician_id | toUpperCase }}</td>
+                                <td>{{ app.appointment_time | dateFormat }}</td>
+                                <td><button class="btn btn-primary" (click)="selectAppointmentButton(app.appointment_id)" style="background-color: cadetblue;">Update</button></td>
+                                <td><a routerLink="/display-prescription/{{app.appointment_id}}" class="btn btn-primary">Display</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

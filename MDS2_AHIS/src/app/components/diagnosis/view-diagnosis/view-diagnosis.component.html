@@ -1,0 +1,141 @@
+<main>
+    <div class="container" style="width: 72rem; margin-bottom: 2rem">
+        <h1 class="text-center">Consultation and Diagnosis Details</h1>
+        <div class="text-center">
+            <p><strong>Consultation ID:</strong> {{ aConsultation.consultationId }}</p>
+            <p><strong>Consultation Date, Time:</strong> {{ aConsultation.consultationDateTime | dateTimeFormat }}</p>
+        </div>
+
+        <!-- Prescription Examination and Diagnosis Details Section -->
+        <section>
+            <div class="row">
+                <!-- Prescription Details Section -->
+                <div class="col-md-4 mb-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <!-- Physician Details -->
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="card-title"><strong>Prescriptions</strong></h4>
+                                <button (click)="AddPrescription( aDiagnosis.diagnosisId )" type="button" class="btn btn-primary">Add</button>
+                            </div>
+                            <hr>
+                            <div class="card">
+                                <div class="row row-cols-1 g-3">
+                                    <div class="col">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Prescription</th>
+                                                    <th>View</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let prescription of aDiagnosis.prescriptionList">
+                                                    <td>{{prescription.prescription_id}}</td>
+                                                    <td>{{ prescription.prescription_name }} </td>
+                                                    <td><button (click)="viewSelectedPrescription(prescription.prescription_id)" type="button" class="btn btn-primary">View</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnosis Details Card -->
+                <div class="col-md-8 mb-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="card-title"><strong>Diagnosis Details</strong></h4>
+                                <button (click)="updateDiagnosis(aDiagnosis.diagnosisId)" type="button" class="btn btn-secondary" >Update</button>
+                            </div>
+                            <hr>
+                            <!-- Diagnosis Details -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Diagnisis ID:</strong> {{ aDiagnosis.diagnosisId }}</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Date:</strong> {{ aDiagnosis.diagnosisDate | dateFormat}}</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p><strong>Treatment Description:</strong> {{ aDiagnosis.diagnosisDescription }}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p><strong>Additional Note:</strong> {{ aDiagnosis.diagnosisAdditional }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Examination and Physician/Patient Details Section -->
+        <section>
+            <div class="row">
+                <!-- Physician and Patient Details Card -->
+                <div class="col-md-4 mb-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <!-- Physician Details -->
+                            <h4 class="card-title"><strong>Physician in Charge</strong></h4>
+                            <hr>
+                            <p><strong>Physician ID:</strong> {{ aPhysician.physician_id }}</p>
+                            <p><strong>Physician Name:</strong> Dr. {{ aPhysician.physician_firstName }} {{ aPhysician.physician_lastName }}</p>
+                            <p> </p>
+                            <!-- Patient Details -->
+                            <h4 class="card-title mt-4"><strong>Patient Information</strong></h4>
+                            <hr>
+                            <p><strong>Patient ID:</strong> {{ aPatient.patientId }}</p>
+                            <p><strong>Patient Name:</strong> {{ aPatient.firstName }} {{ aPatient.lastName }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultation Examination Details Card -->
+                <div class="col-md-8 mb-3">
+                    <div class="card" style="height: 100%;">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>Consultation Examination Details</strong></h4>
+                            <hr>
+                            <!-- Examination Details -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>General Appearance:</strong> {{ aConsultation.generalAppearance }}</p>
+                                    <p><strong>Body Temperature:</strong> {{ aConsultation.temperature }}°C</p>
+                                    <p><strong>Height:</strong> {{ aConsultation.height }}cm</p>
+                                    <p><strong>Weight:</strong> {{ aConsultation.weight }}kg</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>Blood Pressure:</strong> {{ aConsultation.bloodPressure }}mmHg</p>
+                                    <p><strong>Breathing Pattern:</strong> {{ aConsultation.breathingPattern }}</p>
+                                    <p><strong>Pupil Reflex Condition:</strong> {{ aConsultation.pupilReflexCondition }}</p>
+                                    <p><strong>Nerve Reflex Condition:</strong> {{ aConsultation.nerveReflexCondition }}</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p><strong>Other:</strong> {{ aConsultation.other }}</p>
+                            </div>
+                            <h4 class="card-title"><strong>Patient Symptoms</strong></h4>
+                            <hr>
+                            <div class="mb-3">
+                                <p><strong>Symptoms:</strong> {{ aConsultation.patientSymptom }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Built by:
+        <a class="text-white">MDS02</a>
+    </div>
+</footer>

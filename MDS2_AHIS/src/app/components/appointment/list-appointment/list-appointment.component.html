@@ -1,0 +1,45 @@
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 72rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <h1 class="card-title text-center">Appointment Records</h1>
+            <div class="row row-cols-1 g-3">
+                <div class="col">                
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Physician ID</th>
+                                <th scope="col">Patient ID</th>
+                                <th scope="col">Appointment Date Time</th>
+                                <th scope="col"> </th>
+                                <th scope="col">Actions</th>
+                                <th scope="col"> </th>
+                                <th scope="col">Consultation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let app of appointmentDB">
+                                <th scope="row">{{ app.appointment_id }}</th>
+                                <td>{{ app.physician_id | toUpperCase }}</td>
+                                <td>{{ app.patient_id }}</td>
+                                <td>{{ app.appointment_time | dateTimeFormat }}</td>
+                                <td><a routerLink="/display-appointment/{{app.appointment_id}}" class="btn btn-primary">View</a></td>
+                                <td><a routerLink="/update-appointment/{{app.appointment_id}}" class="btn btn-secondary">Update</a></td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="onDelete(app.appointment_id)">Delete</button>
+                                </td>
+                                <td><a routerLink="/start-consultation/{{app.appointment_id}}" class="btn btn-success" style="background-color: rgb(59, 167, 37); border-color: rgb(59, 167, 37);"> Start </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

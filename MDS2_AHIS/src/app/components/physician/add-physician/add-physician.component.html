@@ -1,0 +1,46 @@
+<main class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 52rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center">Register Physician/Doctor</h1>
+                <h5 class="sub-header text-center">Fill in the physician/doctor information</h5>
+                <p> </p>
+                <form id="physicianForm" (ngSubmit)="onSubmit(physicianForm)" class="needs-validation" novalidate action="/add-physician" #physicianForm="ngForm">
+                    <div class="form-group">
+                        <label for="physician_firstName">First Name:</label>
+                        <input type="text" class="form-control" name="physician_firstName" placeholder="Enter first name" ngModel required>
+                        <div class="invalid-feedback">
+                            Please provide a valid name.
+                        </div>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="physician_lastName">Last Name:</label>
+                        <input type="text" class="form-control" name="physician_lastName" placeholder="Enter last name" ngModel required>
+                        <div class="invalid-feedback">
+                            Please provide a valid name.
+                        </div>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="birth_date">Birth Date:</label>
+                        <input type="date" class="form-control" name="birth_date" ngModel required>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="department">Assigned Working Department:</label>
+                        <textarea class="form-control"name="department" placeholder="Enter assigned working department" ngModel></textarea>
+                    </div>
+                    <p> </p>
+                    <button type="submit" class="btn btn-primary mt-4" >Register Physician/Doctor</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>  
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>

@@ -1,0 +1,75 @@
+.main-app {
+    display: block;
+    padding: auto;
+}
+
+.main-index-content {
+    display: flex;
+    justify-content: center;
+}
+
+.section-cards {
+    display: flex;
+    justify-content: center; 
+    gap: 2rem;
+}
+
+.banner-image{
+    max-width: 40rem;
+}
+
+/* The sidebar menu */
+.sidebar {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    padding-top: 60px; 
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+/* Close button */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Open button */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    position: absolute;
+    left: 0; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+/* When the sidebar is open */
+.sidebar-open {
+    width: 250px;
+}

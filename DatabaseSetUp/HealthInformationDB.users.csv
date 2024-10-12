@@ -1,0 +1,2 @@
+_id,userFirstName,userLastName,username,userEmail,hash,profileImage,isAdmin,role,createdAt,updatedAt,__v
+6707809fe917260b6db1ad6e,Default,Admin,defaultAdmin,defaultAdmin@gmail.com,$2a$10$TyFRu1lhPEnyQAvxSbfIz.OjpsvK1hRVDVgKDfWRusUE35kl0g8eu,./src/assets/images/femaleNurse.png,true,66e7f6fbb8cc389831b242e7,2024-10-10T07:22:07.626Z,2024-10-10T07:22:07.626Z,0

@@ -1,0 +1,99 @@
+{
+  "configVersion": 1,
+  "timestamp": 1728499118797,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.1c2e42a1339ab5f4.js",
+        "/manifest.webmanifest",
+        "/polyfills.563625714aab15e4.js",
+        "/runtime.27a097de2e984900.js",
+        "/styles.8296f4a196814c99.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/404.png",
+        "/assets/images/banner-sample.png",
+        "/assets/images/doctor.png",
+        "/assets/images/femaleNurse.png",
+        "/assets/images/logo_with_word.PNG",
+        "/assets/images/logo_without_word-removebg-preview.png",
+        "/assets/images/logo_without_word.PNG",
+        "/assets/images/maleNurse.png",
+        "/assets/images/surgeon.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/assets/images/404.png": "fec696e8d56c129ba126325a2c765f462c6e7ffc",
+    "/assets/images/banner-sample.png": "82b0a9a0b3c451fafd670312cc2699d08ea3acf6",
+    "/assets/images/doctor.png": "e0be30dc4623008900b621d96ad20f3641641248",
+    "/assets/images/femaleNurse.png": "10aec0f949476cc824078c03d38fda8b15334461",
+    "/assets/images/logo_with_word.PNG": "b3f6ad6725fa747ced6fa486d22089ef79c182b7",
+    "/assets/images/logo_without_word-removebg-preview.png": "e1270aef194949dc0f29831663a6aab802298d0a",
+    "/assets/images/logo_without_word.PNG": "c8bbb28b3556d3af49ae9054a9e23c7d67c52f5f",
+    "/assets/images/maleNurse.png": "0396c835b8b53c0416766b7dd7479afb2dc532c6",
+    "/assets/images/surgeon.png": "8e3ce6d13f6b9df721b6f9107d9cc4ded5e8bf28",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "9b7c2fd7466db6f1e74fdce22e493eccc04703be",
+    "/main.1c2e42a1339ab5f4.js": "3b8c13d7f9ff66537975046a2fd652fbfde647c6",
+    "/manifest.webmanifest": "402005186918c816a0a23f9982273cee7f9701ac",
+    "/polyfills.563625714aab15e4.js": "9c7bedf19e1f2b3a51c4085aa44c908278bbb86f",
+    "/runtime.27a097de2e984900.js": "139d80dbe6e3589b1f4fdc10eaae73a240e9cd8c",
+    "/styles.8296f4a196814c99.css": "ba423bb89486a44adb315b99553d2e153fa66a9a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

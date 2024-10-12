@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 52rem; margin-bottom: 2rem">
+        <div class="card-body">
+            <div class="container" style="width: 70%;">
+                <h1 class="card-title text-center">Add/Register Appointment</h1>
+                <h5 class="sub-header text-center">Fill in new appointment details & click submit</h5>
+                <p> </p>
+                <form id="appointmentForm" (ngSubmit)="onSubmit(appointmentForm)" class="needs-validation" novalidate action="/add-appointment" #appointmentForm="ngForm">
+                    <div class="form-group">
+                        <label for="physician_id">Physician ID:</label>
+                        <select class="form-control" name="physician_id" placeholder="Select Phycisian" ngModel required>
+                            <option *ngFor="let doc of physicianDB" [value]="doc.physician_id">
+                              {{ doc.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="patient_id">Patient ID:</label>
+                        <select class="form-control" name="patient_id" placeholder="Select Patient" ngModel required>
+                          <option *ngFor="let patient of patientDB" [value]="patient.patientId">
+                            {{ patient.name }}
+                          </option>
+                        </select>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="appointment_time">Appointment Start Time:</label>
+                        <input type="datetime-local" class="form-control" name="appointment_time" ngModel required>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="appointment_venue">Venue:</label>
+                        <input type="text" class="form-control" name="appointment_venue" placeholder="Enter appointment venue" ngModel required>
+                        <div class="invalid-feedback">
+                            Please provide a valid venue.
+                        </div>
+                    </div>
+                    <p> </p>
+                    <div class="form-group">
+                        <label for="appointment_duration">Appointment Duration (Minutes):</label>
+                        <input type="number" class="form-control" name="appointment_duration" placeholder="Enter appointment duration" [(ngModel)]="defaultAppointmentDuration" required>
+                    </div>
+                    <p> </p> 
+                    <button type="submit" class="btn btn-primary mt-4">Add Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
+<footer class="bg-dark text-center text-white">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Built by:
+      <a class="text-white">MDS02</a>
+    </div>
+</footer>
